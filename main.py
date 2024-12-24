@@ -7,6 +7,7 @@ bot = telebot.TeleBot(_token)
 db = database.Database()
 ready = True
 report = {}
+
 @bot.message_handler(commands=['start'])
 def start(message):
     if message.chat.id not in list(report.keys()):
@@ -22,6 +23,7 @@ def start(message):
     markup.add(btn)
     btn = telebot.types.KeyboardButton("🧐 Статистика")
     markup.add(btn)
+    print(user)
     if user:
         pass
     else:
